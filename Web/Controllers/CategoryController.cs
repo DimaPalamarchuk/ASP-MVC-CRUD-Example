@@ -84,10 +84,11 @@ namespace Web.Controllers
             }
             return View(categoryFromDb);
         }
+
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Category? obj = _db.Categories.FirstOrDefault(u => u.CategoryId == id);
+            Category? obj = _db.Categories.Find(id);
             if(obj == null)
             {
                 return NotFound();
