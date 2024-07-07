@@ -29,7 +29,7 @@ namespace WebRazor.Pages.Categories
             {
                 _db.Categories.Update(Category);
                 _db.SaveChanges();
-//                TempData["Success"] = "Category updated successfully!";
+                TempData["Success"] = "Category updated successfully!";
                 return RedirectToAction("Index");
             }
             return RedirectToPage("Index");
